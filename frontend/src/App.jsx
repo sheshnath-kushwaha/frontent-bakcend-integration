@@ -22,7 +22,7 @@ const App = () => {
   // ])
   console.log("Hello shravani ")
   function fetchdata(){
-      axios.get('http://localhost:3000/notes/api').then((res)=>{
+      axios.get('https://frontent-bakcend-integration.onrender.com/notes/api').then((res)=>{
     setnotes(res.data.notes)
   })
     
@@ -38,7 +38,7 @@ const App = () => {
     const {title,description} =e.target.elements
     console.log(title.value,description.value)
 
-    axios.post('http://localhost:3000/notes/api',{
+    axios.post('https://frontent-bakcend-integration.onrender.com/notes/api',{
       title:title.value,
       description:description.value
     })
@@ -52,7 +52,7 @@ const App = () => {
 
 
   function handleDeletenote(noteId){
-    axios.delete('http://localhost:3000/notes/api/'+noteId,{
+    axios.delete('https://frontent-bakcend-integration.onrender.com/notes/api/'+noteId,{
       
     })
     .then(res=>{
@@ -67,7 +67,7 @@ const App = () => {
   function handleUpdatenote(noteId,){
     const newDesc=prompt("Enter the new description")
 
-    axios.patch(`http://localhost:3000/notes/api/${noteId}`,{
+    axios.patch(`https://frontent-bakcend-integration.onrender.com/notes/api/${noteId}`,{
       description:newDesc
     })
 
